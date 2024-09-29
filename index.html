@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Lor!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">Paul Lor!</div>
+            
+            <!-- Desktop Nav -->
+            <nav class="menu md:flex hidden">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <!-- Mobile Hamburger Icon -->
+            <button class="hamb md:hidden" id="hamburger">
+                <div class="hamb-line"></div>
+                <div class="hamb-line"></div>
+                <div class="hamb-line"></div>
+                <div class="hamb-x">X</div>
+            </button>
+            <!-- Mobile Dropdown Menu -->
+            <nav id="navbar" class="menu hidden">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="video-container">
+        <video id="video1" autoplay muted controls preload="auto" playsinline>
+            <source src="historic_bath.mp4" type="video/mp4">
+        </video>
+
+        <video id="video2" muted controls preload="auto" playsinline style="display: none;">
+            <source src="manhattan.mp4" type="video/mp4">
+        </video>
+        <video id="video3" muted controls preload="auto" playsinline style="display: none;">
+            <source src="highway.mp4" type="video/mp4">
+        </video>
+
+
+
+
+        <div class="overlay">
+            <blockquote id="hero-quote">Best Web Design</blockquote>
+            <cite id="hero-cite">Top 10 Websites</cite>
+        </div>
+    </div>
+
+    <!-- CTA Bar Section -->
+    <section class="cta-bar">
+        <div class="container">
+            <a href="#about" class="cta-link">About Us</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="company-overview">
+                    <p>One Essex Court is a leading set of barristers' chambers, specialising in commercial disputes. Our members provide specialist advice and advocacy services worldwide, which include all areas of dispute resolution, litigation and arbitration.</p>
+                    <p>Our work embraces all aspects of domestic and international trade, commerce and finance. Members of Chambers are recognised specialists in the many diverse fields characterised as commercial disputes, also regularly accepting nominations as arbitrators, mediators and experts.</p>
+                </div>
+                <div class="vertical-rule"></div>
+                <div class="horizontal-rule"></div>
+                <div id="slider">
+                    <div class="slide active" data-index="0">
+                        <blockquote class="slider-quote">
+                            <p>"One Essex Court is right at the top of the market – its barristers appear in all the biggest cases."</p>
+                        </blockquote>
+                        <p>The Legal 50</p>
+                    </div>
+                    <div class="slide" data-index="1">
+                        <blockquote class="slider-quote">
+                            <p>"They are just absolutely at the top of their game. Both in terms of the technical judgement and client service."</p>
+                        </blockquote>
+                        <p>Chambers UK Bar</p>
+                    </div>
+                    <div class="slide" data-index="2">
+                        <blockquote class="slider-quote">
+                            <p>"One Essex is truly the premier commercial litigation set in London. They seem to be involved in every major dispute percolating through the English Courts."</p>
+                        </blockquote>
+                        <p>The Legal 500</p>
+                    </div>
+                    <div class="slide" data-index="3">
+                        <blockquote class="slider-quote">
+                            <p>"An exceptional set of chambers with a fabulous pool of talent' who are considered 'the absolute cream of the crop of commercial/fraud litigators."</p>
+                        </blockquote>
+                        <p>The Legal 500</p>
+                    </div>
+                    <div class="slide" data-index="4">
+                        <blockquote class="slider-quote">
+                            <p>"They are just absolutely at the top of their game. Both in terms of the technical judgement and client service."</p>
+                        </blockquote>
+                        <p>Chambers UK Bar</p>
+                    </div>
+                    <div id="slide-buttons">
+                        <span class="slide-button active" data-index="0"></span>
+                        <span class="slide-button" data-index="1"></span>
+                        <span class="slide-button" data-index="2"></span>
+                        <span class="slide-button" data-index="3"></span>
+                        <span class="slide-button" data-index="4"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linking the external JS -->
+    <script src="script.js"></script>
+</body>
+</html>

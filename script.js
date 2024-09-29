@@ -74,3 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Autoplay was prevented:", error);
     });
   });
+
+
+  window.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video');
+
+    videos.forEach(video => {
+        // Set a slight delay (e.g., 100ms) to give time for the controls to be hidden
+        setTimeout(() => {
+            // Only autoplay if the video is muted (to comply with autoplay restrictions)
+            if (video.muted) {
+                video.play().catch(error => {
+                    console.error('Autoplay failed due to:', error);
+                });
+            }
+        }, 100); // Adjust delay as needed
+    });
+});

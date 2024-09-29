@@ -113,24 +113,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* for auto changing the hero quote */
 
-window.addEventListener('DOMContentLoaded', function() {
-    const quotes = [
-        "Best Web Design",
-        "Top 10 Websites",
-        "Award-Winning Designs",
-        "Innovative Web Solutions"
-    ];
 
-    let currentQuoteIndex = 0;
-    const quoteElement = document.getElementById('hero-quote');
 
-    function changeQuote() {
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        quoteElement.textContent = quotes[currentQuoteIndex];
-    }
 
-    // Change quote every 5 seconds
-    setInterval(changeQuote, 5000);
-});
-
+// Auto Text Changes over Hero Video
+const quotes = [
+    { text: "Best Web Design", cite: "Top 10 Websites" },
+    { text: "Innovative Solutions", cite: "Design Awards 2023" },
+    { text: "Cutting-Edge Technologies", cite: "Tech Innovators" }
+  ];
+  
+  let currentQuoteIndex = 0;
+  const quoteElement = document.getElementById('hero-quote');
+  const citeElement = document.getElementById('hero-cite');
+  
+  function changeQuote() {
+    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+    quoteElement.textContent = quotes[currentQuoteIndex].text;
+    citeElement.textContent = quotes[currentQuoteIndex].cite;
+  }
+  
+  // Change quote every 5 seconds
+  setInterval(changeQuote, 5000);
 

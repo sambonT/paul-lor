@@ -111,3 +111,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/* for auto changing the hero quote */
+
+window.addEventListener('DOMContentLoaded', function() {
+    const quotes = [
+        "Best Web Design",
+        "Top 10 Websites",
+        "Award-Winning Designs",
+        "Innovative Web Solutions"
+    ];
+
+    let currentQuoteIndex = 0;
+    const quoteElement = document.getElementById('hero-quote');
+
+    function changeQuote() {
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        quoteElement.textContent = quotes[currentQuoteIndex];
+    }
+
+    // Change quote every 5 seconds
+    setInterval(changeQuote, 5000);
+});
+
+

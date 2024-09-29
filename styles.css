@@ -402,6 +402,35 @@ cite {
   #slide-buttons {
     padding: 15px 0;
   }
+
+  /* to try and hide the pause button */
+  /* Hide video controls on mobile */
+@media only screen and (max-width: 768px) {
+  video {
+      display: block;
+      width: 100%;
+  }
+  video::-webkit-media-controls {
+      display: none !important;
+  }
+  video::-moz-media-controls {
+      display: none !important;
+  }
+  video::-ms-media-controls {
+      display: none !important;
+  }
+  video::-o-media-controls {
+      display: none !important;
+  }
+}
+
+
+
+
+
+
+
+
 }
 
 /* Small Desktop and Tablet View (768px to 1199px) */

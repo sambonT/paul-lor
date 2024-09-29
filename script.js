@@ -86,19 +86,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     videos.forEach(video => {
+        // Hide native controls with CSS on mobile devices
         if (isMobileDevice()) {
-            // Disable controls on mobile devices
-            video.removeAttribute('controls');
+            video.controls = false;
         }
 
-        // Set a slight delay (100ms) to autoplay after controls are hidden
-        setTimeout(() => {
-            if (video.muted) {
-                video.play().catch(error => {
-                    console.error('Autoplay failed due to:', error);
+        // Try to autoplay the video
+        let playPromise = video.play();
+
+        // Check if autoplay fails (due to mobile browser restrictions)
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Autoplay successful
+                console.log('Autoplay started successfully');
+            }).catch(error => {
+                // Autoplay failed, fallback to require user interaction
+                console.log('Autoplay failed. Waiting for user interaction.');
+                video.addEventListener('click', function() {
+                    video.play();
                 });
-            }
-        }, 100); // Adjust delay as needed
+            });
+        }
     });
 });
+
 

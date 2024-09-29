@@ -76,13 +76,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+  // to see if it will remove the pause button from being seen
+  
   window.addEventListener('DOMContentLoaded', function() {
     const videos = document.querySelectorAll('video');
 
+    function isMobileDevice() {
+        return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
     videos.forEach(video => {
-        // Set a slight delay (e.g., 100ms) to give time for the controls to be hidden
+        if (isMobileDevice()) {
+            // Disable controls on mobile devices
+            video.removeAttribute('controls');
+        }
+
+        // Set a slight delay (100ms) to autoplay after controls are hidden
         setTimeout(() => {
-            // Only autoplay if the video is muted (to comply with autoplay restrictions)
             if (video.muted) {
                 video.play().catch(error => {
                     console.error('Autoplay failed due to:', error);
@@ -91,3 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100); // Adjust delay as needed
     });
 });
+
